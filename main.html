@@ -10,6 +10,20 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+  // Convert to numbers in case inputs are strings
+  const nums = arr.map(Number);
+
+  // Use a Set to remove duplicates
+  const unique = [...new Set(nums)];
+
+  // If less than 2 unique numbers, return -Infinity
+  if (unique.length < 2) return -Infinity;
+
+  // Sort in descending order
+  unique.sort((a, b) => b - a);
+
+  // Return the second highest number
+  return unique[1];
 			
 		}
 
